@@ -70,9 +70,9 @@ To connect ML predictions to physical MOF synthesis criteria, high-importance hi
 
 | Feature | Radial Distance ($r$) | Physical Parameter | Physical Interpretation |
 | :--- | :---: | :---: | :--- |
-| `sigma_bin_1283` | 8.5 Å | sigma approx 2.85 | Medium-range steric framework packing |
-| `epsilon_bin_202` | 1.0 Å | varepsilon approx 247.45 K | Short-range strong interaction site |
-| `epsilon_bin_203` | 1.0 Å | varepsilon approx 251.99\text{ K}$ | Primary electrostatic/dispersion binding pocket |
+| `sigma_bin_1283` | 8.5 Å | $\sigma \approx 2.85$ | Medium-range steric framework packing |
+| `epsilon_bin_202` | 1.0 Å | $\varepsilon \approx 247.45\text{ K}$ | Short-range strong interaction site |
+| `epsilon_bin_203` | 1.0 Å | $\varepsilon \approx 251.99\text{ K}$ | Primary electrostatic/dispersion binding pocket |
 | `sigma_bin_1121` | 7.5 Å | $\sigma \approx 2.37$ | Interstitial pore throat boundary |
 | `q_bin_823` | 5.5 Å | $q \approx -2.26\text{ e}$ | Polarized framework site driving low-P adsorption |
 
