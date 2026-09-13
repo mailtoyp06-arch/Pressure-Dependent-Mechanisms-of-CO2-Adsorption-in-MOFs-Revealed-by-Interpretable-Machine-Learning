@@ -4,9 +4,9 @@
 [![Framework](https://img.shields.io/badge/ML-Scikit--Learn%20%7C%20SHAP-orange)](https://scikit-learn.org/)
 
 ## Executive Summary (Engineering Takeaways)
-* **High-Fidelity Surrogate Modeling:** Built a Gradient Boosting (GBM) surrogate model trained on Grand Canonical Monte Carlo (GCMC) simulation data, predicting CO₂ uptake across thousands of MOF candidate structures with **$R^2 = 0.982$** and **$\text{RMSE} = 2.38\text{ mol/kg}$**.
-* **Pressure-Dependent Mechanics Uncovered:** Used SHAP diagnostics to prove that global pore descriptors (void fraction, pore limiting diameter) govern high-pressure capacity ($98.1\%$ predictive variance), whereas local atomic interaction histograms jump to **$27\%$ importance** at low pressure ($P < 1\text{ bar}$).
-* **Physically-Informed Material Design:** Decoded abstract atomistic histogram features back into physical parameters ($\sigma, \varepsilon, q$ at specific radial distances), providing actionable design criteria for high-efficiency carbon capture materials.
+* **High-Fidelity Surrogate Modeling:** Built a Gradient Boosting (GBM) surrogate model trained on Grand Canonical Monte Carlo (GCMC) simulation data, predicting CO₂ uptake across thousands of MOF candidate structures with R^2 = 0.982 and RMSE = 2.38 mol/kg.
+* **Pressure-Dependent Mechanics Uncovered:** Used SHAP diagnostics to prove that global pore descriptors (void fraction, pore limiting diameter) govern high-pressure capacity (98.1 predictive variance), whereas local atomic interaction histograms jump to 27 importance at low pressure (P < 1 bar).
+* **Physically-Informed Material Design:** Decoded abstract atomistic histogram features back into physical parameters (sigma, varepsilon, at specific radial distances), providing actionable design criteria for high-efficiency carbon capture materials.
 
 ---
 
@@ -48,7 +48,7 @@ Gradient Boosting (GBM) and Random Forest (RF) models were trained on GCMC simul
 ## Visual Insights & SHAP Diagnostics
 
 ### 1. Model Parity Plot
-*Predicted CO₂ adsorption vs. true GCMC simulation benchmarks (R^2 = 0.982).*
+Predicted CO₂ adsorption vs. true GCMC simulation benchmarks (R^2 = 0.982).
 
 <img width="571" height="575" alt="image" src="https://github.com/user-attachments/assets/2da56092-01b9-4884-863d-e2f13f22ec3c" />
 
@@ -70,11 +70,11 @@ To connect ML predictions to physical MOF synthesis criteria, high-importance hi
 
 | Feature | Radial Distance ($r$) | Physical Parameter | Physical Interpretation |
 | :--- | :---: | :---: | :--- |
-| `sigma_bin_1283` | $8.5\text{ Å}$ | $\sigma \approx 2.85$ | Medium-range steric framework packing |
-| `epsilon_bin_202` | $1.0\text{ Å}$ | $\varepsilon \approx 247.45\text{ K}$ | Short-range strong interaction site |
-| `epsilon_bin_203` | $1.0\text{ Å}$ | $\varepsilon \approx 251.99\text{ K}$ | Primary electrostatic/dispersion binding pocket |
-| `sigma_bin_1121` | $7.5\text{ Å}$ | $\sigma \approx 2.37$ | Interstitial pore throat boundary |
-| `q_bin_823` | $5.5\text{ Å}$ | $q \approx -2.26\text{ e}$ | Polarized framework site driving low-P adsorption |
+| `sigma_bin_1283` | 8.5 Å | sigma approx 2.85 | Medium-range steric framework packing |
+| `epsilon_bin_202` | 1.0 Å | varepsilon approx 247.45 K | Short-range strong interaction site |
+| `epsilon_bin_203` | 1.0 Å | varepsilon approx 251.99\text{ K}$ | Primary electrostatic/dispersion binding pocket |
+| `sigma_bin_1121` | 7.5 Å | $\sigma \approx 2.37$ | Interstitial pore throat boundary |
+| `q_bin_823` | 5.5 Å | $q \approx -2.26\text{ e}$ | Polarized framework site driving low-P adsorption |
 
 ---
 
